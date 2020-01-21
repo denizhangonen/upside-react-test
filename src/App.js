@@ -1,9 +1,12 @@
-import React from 'react';
+import React from "react";
+
+import Layout from "./hoc/Layout/Layout";
 
 function App() {
   return (
     <div className="App">
-      Dhan 
+      <Layout></Layout>
+      Dhan
     </div>
   );
 }
