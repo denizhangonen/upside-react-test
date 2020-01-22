@@ -1,4 +1,5 @@
 import * as actionTypes from "../actions/actionTypes";
+import { updateObject } from "../../shared/utility";
 
 const initialState = {
   currentIngredients: {
@@ -19,30 +20,52 @@ const INGREDIENT_PRICES = {
   pepper: 0.6
 };
 
+const addIngredient = (state, action) => {
+  const updatedIngs = updateObject(state.currentIngredients, {
+    [action.payload]: true
+  });
+  return updateObject(state, {
+    currentIngredients: updatedIngs,
+    totalPrice: state.totalPrice + INGREDIENT_PRICES[action.payload]
+  });
+};
+
+const removeIngredient = (state, action) => {
+  const updatedIngs = updateObject(state.currentIngredients, {
+    [action.payload]: false
+  });
+  return updateObject(state, {
+    currentIngredients: updatedIngs,
+    totalPrice: state.totalPrice - INGREDIENT_PRICES[action.payload]
+  });
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.ADD_INGREDIENT:
-      return {
-        ...state,
-        currentIngredients: {
-          ...state.currentIngredients,
-          [action.payload]: true
-        },
-        totalPrice: state.totalPrice + INGREDIENT_PRICES[action.payload]
-      };
+      return addIngredient(state, action);
+    // return {
+    //   ...state,
+    //   currentIngredients: {
+    //     ...state.currentIngredients,
+    //     [action.payload]: true
+    //   },
+    //   totalPrice: state.totalPrice + INGREDIENT_PRICES[action.payload]
+    // };
     case actionTypes.REMOVE_INGREDIENT:
-      return {
-        ...state,
-        currentIngredients: {
-          ...state.currentIngredients,
-          [action.payload]: false
-        },        
-        totalPrice: state.totalPrice - INGREDIENT_PRICES[action.payload]
-      };
+      return removeIngredient(state, action);
+    // return {
+    //   ...state,
+    //   currentIngredients: {
+    //     ...state.currentIngredients,
+    //     [action.payload]: false
+    //   },
+    //   totalPrice: state.totalPrice - INGREDIENT_PRICES[action.payload]
+    // };
     case actionTypes.RESET_ORDER:
       return {
         ...initialState
-      }
+      };
     default:
       return state;
   }
