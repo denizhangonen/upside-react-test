@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { Redirect } from "react-router-dom";
+
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
@@ -8,6 +10,7 @@ import Pizza from "../../components/Pizza/Pizza";
 import BuildControls from "../../components/Pizza/BuildControls/BuildControls";
 import Modal from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/Pizza/OrderSummary/OrderSummary";
+import Spinner from "../../components/UI/Spinner/Spinner";
 
 import * as actions from "../../store/actions/";
 
@@ -42,7 +45,7 @@ class PizzaBuilder extends Component {
   };
 
   render() {
-    const { curIngredients, totalPrice } = this.props;
+    const { curIngredients, totalPrice, loading } = this.props;
     let addedIngs = [];
 
     // Construct an array of added ingredients
@@ -52,18 +55,27 @@ class PizzaBuilder extends Component {
       }
     }
 
+    const purchasedRedirect = this.props.purchased ? (
+      <Redirect to="/orders" />
+    ) : null;
+
     return (
       <Aux>
+        {purchasedRedirect}
         <Modal
           show={this.state.purchasing}
-          modalClosed={this.purchaseCancelHandler}
+          modalClosed={this.purchaseCancelHandler}          
         >
-          <OrderSummary
-            ingredients={addedIngs}
-            price={totalPrice}
-            purchaseCancelled={this.purchaseCancelHandler}
-            purchaseContinued={this.purchaseContinueHandler}
-          />
+          {loading ? (
+            <Spinner />
+          ) : (
+            <OrderSummary
+              ingredients={addedIngs}
+              price={totalPrice}
+              purchaseCancelled={this.purchaseCancelHandler}
+              purchaseContinued={this.purchaseContinueHandler}
+            />
+          )}
         </Modal>
         <Pizza ingredients={addedIngs} />
         <BuildControls
@@ -82,7 +94,9 @@ class PizzaBuilder extends Component {
 const mapStateToProps = state => {
   return {
     curIngredients: state.pizzaBuilder.currentIngredients,
-    totalPrice: state.pizzaBuilder.totalPrice
+    totalPrice: state.pizzaBuilder.totalPrice,
+    purchased: state.order.purchased,
+    loading: state.order.loading
   };
 };
 

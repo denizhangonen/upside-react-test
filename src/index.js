@@ -10,13 +10,20 @@ import "./index.scss";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import pizzaBuilder from "./store/reducers/pizzaBuilder";
+import orderReducer from "./store/reducers/order";
 
+// Dev monitoring purposes
 const composeEnhancers =
   process.env.NODE_ENV === "development"
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     : null || compose;
 
-const rootReducer = combineReducers({ pizzaBuilder: pizzaBuilder });
+// Combine all reducers
+const rootReducer = combineReducers({
+  pizzaBuilder: pizzaBuilder,
+  order: orderReducer
+});
+
 const store = createStore(
   rootReducer,
   composeEnhancers(applyMiddleware(thunk))

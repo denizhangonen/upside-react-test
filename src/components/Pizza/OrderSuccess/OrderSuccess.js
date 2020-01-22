@@ -1,0 +1,37 @@
+import React from "react";
+
+import Aux from "../../../hoc/Aux/Aux";
+import Button from "../../UI/Button/Button";
+
+const orderSuccess = props => {
+  // Construct a list of ingredients
+  const ingredientSummary = props.ingredients.map(igKey => {
+    return (
+      <li key={igKey}>
+        <span style={{ textTransform: "capitalize" }}>{igKey}</span>
+      </li>
+    );
+  });
+
+  return (
+    <Aux>
+      <h3>Your Order</h3>
+      <p>
+        Your delicious pizza with the following ingredients is being prepared!
+      </p>
+      <ul>{ingredientSummary}</ul>
+      <p>
+        <strong>Total Price: {props.price.toFixed(2)}</strong>
+      </p>
+      <p>What do you want to do now?</p>
+      <Button btnType="danger" clicked={props.goToMainPage}>
+        Go to Main page
+      </Button>
+      <Button btnType="success" clicked={props.goToOrdersPage}>
+        Go to Orders page
+      </Button>
+    </Aux>
+  );
+};
+
+export default orderSuccess;

@@ -2,7 +2,8 @@ import * as actionTypes from "../actions/actionTypes";
 
 const initialState = {
   loading: false,
-  error: null
+  error: null,
+  purchased: false
 };
 
 const reducer = (state = initialState, action) => {
@@ -17,7 +18,8 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        error: null
+        error: null,
+        purchased: true
       };
     case actionTypes.ORDER_FAIL:
       return {
