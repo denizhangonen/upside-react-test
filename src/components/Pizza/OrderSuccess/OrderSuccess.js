@@ -25,10 +25,10 @@ const orderSuccess = props => {
       </p>
       <p>What do you want to do now?</p>
       <Button btnType="danger" clicked={props.goToMainPage}>
-        Go to Main page
+        Main page
       </Button>
       <Button btnType="success" clicked={props.goToOrdersPage}>
-        Go to Orders page
+        Orders
       </Button>
     </Aux>
   );
