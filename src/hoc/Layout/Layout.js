@@ -4,6 +4,8 @@ import Aux from "../Aux/Aux";
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
 import SideDrawer from "../../components/Navigation/SideDrawer/SideDrawer";
 
+import "./Layout.scss";
+
 class Layout extends Component {
   state = {
     showSideDrawer: false
@@ -22,9 +24,7 @@ class Layout extends Component {
   render() {
     return (
       <Aux>
-        <Toolbar
-          drawerToggleClicked={this.sideDrawerToggleHandler}
-        />
+        <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler} />
         <SideDrawer
           open={this.state.showSideDrawer}
           closed={this.sideDrawerClosedHandler}

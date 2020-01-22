@@ -5,10 +5,6 @@ class Orders extends Component {
     return (
       <div>
         <h1>Hey it may not look like one but it's actually an orders page!</h1>
-        <h1>Hey it may not look like one but it's actually an orders page!</h1>
-        <h1>Hey it may not look like one but it's actually an orders page!</h1>
-        <h1>Hey it may not look like one but it's actually an orders page!</h1>
-        <h1>Hey it may not look like one but it's actually an orders page!</h1>
       </div>
     );
   }

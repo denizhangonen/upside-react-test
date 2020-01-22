@@ -7,15 +7,16 @@ import Orders from "./containers/Orders/Orders";
 import PizzaBuilder from "./containers/PizzaBuilder/PizzaBuilder";
 
 function App() {
+  const routes = (
+    <Switch>
+      <Route path="/orders" component={Orders} />
+      <Route path="/" exact component={PizzaBuilder} />
+      <Redirect to="/" />
+    </Switch>
+  );
   return (
     <div>
-      <Layout>
-        <Switch>
-          <Route path="/orders" component={Orders} />
-          <Route path="/" exact component={PizzaBuilder} />
-          <Redirect to="/" />
-        </Switch>
-      </Layout>
+      <Layout>{routes}</Layout>
     </div>
   );
 }
