@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
 import Aux from "../../hoc/Aux/Aux";
 import Pizza from "../../components/Pizza/Pizza";
 import BuildControls from "../../components/Pizza/BuildControls/BuildControls";
+
+import * as actions from "../../store/actions/";
 
 class PizzaBuilder extends Component {
   state = {
@@ -46,7 +51,9 @@ class PizzaBuilder extends Component {
     this.props.history.push("/checkout");
   };
 
-  addIngredientHandler = () => {};
+  addIngredientHandler = (ingredient) => {    
+    this.props.onAddIngredient(ingredient);
+  };
 
   removeIngredientHandler = () => {};
 
@@ -67,4 +74,15 @@ class PizzaBuilder extends Component {
   }
 }
 
-export default PizzaBuilder;
+const mapStateToProps = state => {
+  return {};
+};
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(
+    { onAddIngredient: actions.addIngredient },
+    dispatch
+  );
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PizzaBuilder);
