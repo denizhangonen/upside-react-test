@@ -15,7 +15,7 @@ const orderSuccess = props => {
 
   return (
     <Aux>
-      <h3>Your Order</h3>
+      <h3>Order Confirmed!</h3>
       <p>
         Your delicious pizza with the following ingredients is being prepared!
       </p>
