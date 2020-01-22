@@ -10,6 +10,7 @@ import Pizza from "../../components/Pizza/Pizza";
 import BuildControls from "../../components/Pizza/BuildControls/BuildControls";
 import Modal from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/Pizza/OrderSummary/OrderSummary";
+import OrderSuccess from "../../components/Pizza/OrderSuccess/OrderSuccess";
 import Spinner from "../../components/UI/Spinner/Spinner";
 
 import * as actions from "../../store/actions/";
@@ -44,6 +45,15 @@ class PizzaBuilder extends Component {
     this.props.onRemoveIngredient(ingredient);
   };
 
+  gotoMainPageHandler = () => {
+  // Not an elegant solution
+    window.location.reload();
+  };
+
+  gotoOrdersHandler = () => {    
+    this.props.history.push("/orders");
+  };
+
   render() {
     const { curIngredients, totalPrice, loading } = this.props;
     let addedIngs = [];
@@ -54,28 +64,38 @@ class PizzaBuilder extends Component {
         addedIngs.push(key);
       }
     }
+    let modalContent = null;
 
-    const purchasedRedirect = this.props.purchased ? (
-      <Redirect to="/orders" />
-    ) : null;
+    // For purchasing state, draw related modal content
+    if (this.state.purchasing) {
+      if (loading) {
+        modalContent = <Spinner />;
+      } else {
+        modalContent = this.props.purchased ? (
+          <OrderSuccess
+            ingredients={addedIngs}
+            price={totalPrice}
+            goToMainPage={this.gotoMainPageHandler}
+            goToOrdersPage={this.gotoOrdersHandler}
+          />
+        ) : (
+          <OrderSummary
+            ingredients={addedIngs}
+            price={totalPrice}
+            purchaseCancelled={this.purchaseCancelHandler}
+            purchaseContinued={this.purchaseContinueHandler}
+          />
+        );
+      }
+    }
 
     return (
       <Aux>
-        {purchasedRedirect}
         <Modal
           show={this.state.purchasing}
-          modalClosed={this.purchaseCancelHandler}          
+          modalClosed={this.purchaseCancelHandler}
         >
-          {loading ? (
-            <Spinner />
-          ) : (
-            <OrderSummary
-              ingredients={addedIngs}
-              price={totalPrice}
-              purchaseCancelled={this.purchaseCancelHandler}
-              purchaseContinued={this.purchaseContinueHandler}
-            />
-          )}
+          {modalContent}
         </Modal>
         <Pizza ingredients={addedIngs} />
         <BuildControls

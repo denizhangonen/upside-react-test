@@ -1,3 +1,5 @@
+$colors:(pizzaPan: rgb(170, 74, 5), shadow:rgba(0, 0, 0, 0.75));
+
 .pizza {
   width: 100%;
   margin: auto;
@@ -50,13 +52,13 @@
   width: 400px;
   height: 400px;
 
-  background-color: rgb(170, 74, 5);
+  background-color: map-get($colors, pizzaPan);
   border-radius: 85px;
 
   position: absolute;
 
-  box-shadow: 0px 5px 25px 5px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 5px 25px 5px map-get($colors, shadow);
+  -webkit-box-shadow: 7px 7px 7px 0px map-get($colors, shadow);
 
   top: 50px;
   left: 70px;
@@ -69,7 +71,7 @@
   position: absolute;
   top: -75px;
   left: 370px;
-  background-color: rgb(170, 74, 5);
+  background-color: map-get($colors, pizzaPan);
   transform: rotate(45deg);
 }
 
@@ -81,8 +83,8 @@
   top: 10px;
   left: 10px;
 
-  box-shadow: 10px 10px 29px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 10px 10px 29px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 29px 0px map-get($colors, shadow);
+  -webkit-box-shadow: 10px 10px 29px 0px map-get($colors, shadow);
 }
 
 #pizza {

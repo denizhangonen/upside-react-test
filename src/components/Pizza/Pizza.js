@@ -13,17 +13,15 @@ const pizza = props => {
   if (transformedIngredients.length === 0) {
     transformedIngredients = (
       <p className="add-ing-message">
-        Let's add some ingredients to make a delicious Pizza!
+        Let's make a delicious Pizza!
       </p>
     );
   }
 
   return (
     <div className="pizza">
-      <h1 id="header">PizzAppSide</h1>
       <div id="pizzacontainer">
         <div id="panhandle"></div>
-
         <div id="pizzapan">
           <div id="pizzashadow">
             <div id="pizza">

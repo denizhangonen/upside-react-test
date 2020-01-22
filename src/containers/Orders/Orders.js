@@ -9,6 +9,7 @@ import Order from "../../components/Order/Order";
 import Spinner from "../../components/UI/Spinner/Spinner";
 
 class Orders extends Component {
+  
   componentDidMount() {
     console.log(this.props.purchased);
     this.props.onFetchOrders();
@@ -40,10 +41,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
-    {
-      onAddIngredient: actions.addIngredient,
-      onRemoveIngredient: actions.removeIngredient,
-      onInitPurchase: actions.purchasePizza,
+    {      
       onFetchOrders: actions.fetchOrders
     },
     dispatch
