@@ -1,1 +1,3 @@
-export {addIngredient, removeIngredient} from "./pizzaBuilder"
+export { addIngredient, removeIngredient } from "./pizzaBuilder";
+
+export { purchasePizza } from "./order";

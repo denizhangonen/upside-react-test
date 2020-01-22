@@ -4,6 +4,8 @@ import Aux from "../../../hoc/Aux/Aux";
 import Button from "../../UI/Button/Button";
 
 const orderSummary = props => {
+
+  // Construct a list of ingredients
   const ingredientSummary = props.ingredients.map(igKey => {
     return (
       <li key={igKey}>
@@ -20,12 +22,12 @@ const orderSummary = props => {
       <p>
         <strong>Total Price: {props.price.toFixed(2)}</strong>
       </p>
-      <p>Continue to Checkout?</p>
+      <p>Do you want to place the order?</p>
       <Button btnType="danger" clicked={props.purchaseCancelled}>
         CANCEL
       </Button>
       <Button btnType="success" clicked={props.purchaseContinued}>
-        CONTINUE
+        PLACE ORDER
       </Button>
     </Aux>
   );

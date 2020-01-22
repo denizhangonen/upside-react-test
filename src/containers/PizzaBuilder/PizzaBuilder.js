@@ -26,8 +26,11 @@ class PizzaBuilder extends Component {
   };
 
   purchaseContinueHandler = () => {
-    this.props.onInitPurchase();
-    this.props.history.push("/checkout");
+    const data = {
+      ingredients: this.props.curIngredients,
+      totalPrice: this.props.totalPrice
+    };
+    this.props.onInitPurchase(data);
   };
 
   addIngredientHandler = ingredient => {
@@ -87,7 +90,8 @@ const mapDispatchToProps = dispatch => {
   return bindActionCreators(
     {
       onAddIngredient: actions.addIngredient,
-      onRemoveIngredient: actions.removeIngredient
+      onRemoveIngredient: actions.removeIngredient,
+      onInitPurchase: actions.purchasePizza
     },
     dispatch
   );
