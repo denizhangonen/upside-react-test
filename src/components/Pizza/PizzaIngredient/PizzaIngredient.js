@@ -12,7 +12,6 @@ import Mushroom from "./Mushroom/Mushroom";
 class PizzaIngredient extends Component {
   render() {
     let ingredient = null;
-    console.log(this.props);
 
     // Get specific ingredient layout for every single ingredient
     switch (this.props.type) {

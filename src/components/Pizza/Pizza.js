@@ -18,34 +18,25 @@ const pizza = props => {
     );
   }
 
-  const showPep = true;
-
   return (
     <div className="pizza">
       {/* <div id="interface"> */}
-        <h1 id="header">PizzAppSide</h1>
-        <div id="pizzacontainer">
-          <div id="panhandle"></div>
+      <h1 id="header">PizzAppSide</h1>
+      <div id="pizzacontainer">
+        <div id="panhandle"></div>
 
-          <div id="pizzapan">
-            <div id="pizzashadow">
-              <div id="pizza">
-                <div id="tomatosauce">
-                  <div id="cheese">
-                    {/* {showPep && <Pepperoni />}
-                    <Sausage />
-                    <Mushroom />
-                    <Olive />
-                    <Pepper /> */}
-                    {transformedIngredients}
-                  </div>
-                </div>
+        <div id="pizzapan">
+          <div id="pizzashadow">
+            <div id="pizza">
+              <div id="tomatosauce">
+                <div id="cheese">{transformedIngredients}</div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* <div id="toggleui">
+      {/* <div id="toggleui">
           <div className="card-container">
             <div className="card" id="rotate">
               <div className="front">

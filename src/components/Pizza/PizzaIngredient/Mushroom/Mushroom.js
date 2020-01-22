@@ -1,17 +1,17 @@
 import React from "react";
 
 const mushroom = () => (
-  <div id="sausage-holder">
-    <div className="sausage s1"></div>
-    <div className="sausage s2"></div>
-    <div className="sausage s3"></div>
-    <div className="sausage s4"></div>
-    <div className="sausage s5"></div>
-    <div className="sausage s6"></div>
-    <div className="sausage s7"></div>
-    <div className="sausage s8"></div>
-    <div className="sausage s9"></div>
-    <div className="sausage s10"></div>
+  <div id="mushroom-holder">
+    <div className="mushroom m1"></div>
+    <div className="mushroom m2"></div>
+    <div className="mushroom m3"></div>
+    <div className="mushroom m4"></div>
+    <div className="mushroom m5"></div>
+    <div className="mushroom m6"></div>
+    <div className="mushroom m7"></div>
+    <div className="mushroom m8"></div>
+    <div className="mushroom m9"></div>
+    <div className="mushroom m10"></div>
   </div>
 );
 

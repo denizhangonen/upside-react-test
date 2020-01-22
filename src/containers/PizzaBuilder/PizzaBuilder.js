@@ -60,11 +60,19 @@ class PizzaBuilder extends Component {
   };
 
   render() {
-    const sampleIngs = ["pepperoni", "sausage", "mushroom", "pepper", "olive"];
     // add count logic so that decide which button to be active
+
+    let addedIngs = [];
+
+    for (const key in this.props.curIngredients) {
+      if (this.props.curIngredients[key]) {
+        addedIngs.push(key);
+      }
+    }
+
     return (
       <Aux>
-        <Pizza ingredients={sampleIngs} />
+        <Pizza ingredients={addedIngs} />
         <BuildControls
           ingredientAdded={this.addIngredientHandler}
           ingredientRemoved={this.removeIngredientHandler}
@@ -77,7 +85,7 @@ class PizzaBuilder extends Component {
 }
 
 const mapStateToProps = state => {
-  return {};
+  return { curIngredients: state.pizzaBuilder.currentIngredients };
 };
 
 const mapDispatchToProps = dispatch => {
