@@ -46,31 +46,23 @@ class PizzaBuilder extends Component {
     this.props.history.push("/checkout");
   };
 
-  addIngredientHandler = () => {
+  addIngredientHandler = () => {};
 
-  }
-
-  removeIngredientHandler = () => {
-
-  }
+  removeIngredientHandler = () => {};
 
   render() {
-    const sampleIngs = ["pepperoni", "sausage", "mushroom"];
+    const sampleIngs = ["pepperoni", "sausage", "mushroom", "pepper", "olive"];
     // add count logic so that decide which button to be active
     return (
-      <div>
-        <h1>Das ist PizzaBuilder</h1>
-
-        <Aux>
-          <Pizza ingredients={sampleIngs} />
-          <BuildControls
-            ingredientAdded={this.addIngredientHandler}
-            ingredientRemoved={this.removeIngredientHandler}
-            // add a disable or enable prop
-            price={this.props.price}
-          />
-        </Aux>
-      </div>
+      <Aux>
+        <Pizza ingredients={sampleIngs} />
+        <BuildControls
+          ingredientAdded={this.addIngredientHandler}
+          ingredientRemoved={this.removeIngredientHandler}
+          // add a disable or enable prop
+          price={this.props.price}
+        />
+      </Aux>
     );
   }
 }

@@ -23,3 +23,522 @@
     }
 
 }
+  
+  #interface {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 900px;
+    margin: auto;
+  }
+  
+  #pizzacontainer {
+    margin: 30px;
+    width: 540px;
+    height: 530px;
+    position: relative;
+    overflow: hidden;
+  
+    background-color: rgba(122, 122, 122, 0.67);
+  }
+  
+  #pizzapan {
+    width: 400px;
+    height: 400px;
+  
+    background-color: rgb(170, 74, 5);
+    border-radius: 85px;
+  
+    position: absolute;
+  
+    box-shadow: 0px 5px 25px 5px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.75);
+  
+    top: 50px;
+    left: 70px;
+    transform: rotate(45deg);
+  }
+  
+  #panhandle {
+    width: 50px;
+    height: 390px;
+    position: absolute;
+    top: -75px;
+    left: 370px;
+    background-color: rgb(170, 74, 5);
+    transform: rotate(45deg);
+  }
+  
+  #pizzashadow {
+    width: 380px;
+    height: 380px;
+    border-radius: 100%;
+    position: relative;
+    top: 10px;
+    left: 10px;
+  
+    box-shadow: 10px 10px 29px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 29px 0px rgba(0, 0, 0, 0.75);
+  }
+  #pizza {
+    width: 380px;
+    height: 380px;
+    border-radius: 100%;
+    background-color: rgb(246, 230, 161);
+    position: absolute;
+  }
+  
+  .spin {
+    animation: spin linear infinite 13s;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  #tomatosauce {
+    width: 350px;
+    height: 350px;
+    border-radius: 100%;
+    background-color: rgb(179, 18, 18);
+    position: absolute;
+    border-style: wave;
+    top: 15px;
+    left: 15px;
+  }
+  
+  #cheese {
+    width: 330px;
+    height: 330px;
+    border-radius: 100%;
+    background-color: rgb(224, 223, 206);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  /* PEPPERONI *********************************************************/
+  
+  #pepperoni-holder {
+    width: 310px;
+    height: 310px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  .pepperoni { 
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: rgb(179, 18, 18);
+    position: absolute;
+  
+    display: block;
+  }
+  
+  .p1 {
+    top: 200px;
+    left: 200px;
+  }
+  
+  .p2 {
+    top: 80px;
+    left: 230px;
+  }
+  
+  .p3 {
+    top: 0px;
+    left: 140px;
+  }
+  
+  .p4 {
+    top: 40px;
+    left: 30px;
+  }
+  
+  .p5 {
+    top: 170px;
+    left: 20px;
+  }
+  
+  .p6 {
+    top: 240px;
+    left: 100px;
+  }
+  
+  .p7 {
+    top: 160px;
+    left: 120px;
+  }
+  
+  /* SAUSAGE *************************************************************/
+  
+  #sausage-holder {
+    width: 310px;
+    height: 310px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  .sausage {
+    width: 30px;
+    height: 30px;
+    border-radius: 40% 75% 75% 100%;
+    background-color: rgb(147, 73, 6);
+    position: absolute;
+  
+    display: block;
+  }
+  
+  .s1 {
+    top: 150px;
+    left: 200px;
+  }
+  
+  .s2 {
+    top: 70px;
+    left: 130px;
+    transform: rotate(270deg);
+  }
+  
+  .s3 {
+    top: 100px;
+    left: 40px;
+    transform: rotate(90deg);
+  }
+  
+  .s4 {
+    top: 200px;
+    left: 50px;
+    transform: rotate(110deg);
+  }
+  
+  .s5 {
+    top: 240px;
+    left: 120px;
+    transform: rotate(200deg);
+  }
+  
+  .s6 {
+    top: 190px;
+    left: 250px;
+    transform: rotate(70deg);
+  }
+  
+  .s7 {
+    top: 40px;
+    left: 230px;
+  }
+  
+  .s8 {
+    top: 90px;
+    left: 10px;
+  }
+  
+  .s9 {
+    top: 20px;
+    left: 70px;
+  }
+  
+  .s10 {
+    top: 130px;
+    left: 90px;
+  }
+  
+  /* MUSHROOM ***********************************************************/
+  
+  #mushroom-holder {
+    width: 310px;
+    height: 310px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  .mushroom {
+    width: 35px;
+    height: 20px;
+    border-radius: 100% 100% 0% 0%;
+    background-color: rgb(189, 129, 28);
+    position: absolute;
+  
+    display: block;
+  }
+  
+  .m1 {
+    top: 20px;
+    left: 220px;
+  }
+  
+  .m2 {
+    top: 70px;
+    left: 190px;
+    transform: rotate(270deg);
+  }
+  
+  .m3 {
+    top: 260px;
+    left: 60px;
+    transform: rotate(90deg);
+  }
+  
+  .m4 {
+    top: 50px;
+    left: 100px;
+    transform: rotate(110deg);
+  }
+  
+  .m5 {
+    top: 140px;
+    left: 160px;
+    transform: rotate(200deg);
+  }
+  
+  .m6 {
+    top: 260px;
+    left: 180px;
+    transform: rotate(70deg);
+  }
+  
+  .m7 {
+    top: 140px;
+    left: 260px;
+  }
+  
+  .m8 {
+    top: 150px;
+    left: 30px;
+  }
+  
+  .m9 {
+    top: 40px;
+    left: 30px;
+  }
+  
+  .m10 {
+    top: 200px;
+    left: 100px;
+  }
+  
+  /* OLIVES ***********************************************************/
+  
+  #olive-holder {
+    width: 310px;
+    height: 310px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  .olive {
+    width: 15px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+  
+    display: block;
+  }
+  
+  .o1 {
+    top: 20px;
+    left: 200px;
+  }
+  
+  .o2 {
+    top: 70px;
+    left: 190px;
+    transform: rotate(270deg);
+  }
+  
+  .o3 {
+    top: 180px;
+    left: 90px;
+    transform: rotate(90deg);
+  }
+  
+  .o4 {
+    top: 50px;
+    left: 80px;
+    transform: rotate(110deg);
+  }
+  
+  .o5 {
+    top: 140px;
+    left: 140px;
+    transform: rotate(200deg);
+  }
+  
+  .o6 {
+    top: 240px;
+    left: 180px;
+    transform: rotate(70deg);
+  }
+  
+  .o7 {
+    top: 140px;
+    left: 230px;
+  }
+  
+  .o8 {
+    top: 150px;
+    left: 10px;
+  }
+  .o9 {
+    top: 220px;
+    left: 50px;
+  }
+  
+  .o10 {
+    top: 130px;
+    left: 50px;
+  }
+  
+  .o11 {
+    top: 0;
+    left: 130px;
+  }
+  
+  /* BELL PEPPER ***********************************************************/
+  
+  #pepper-holder {
+    width: 310px;
+    height: 310px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  .pepper {
+    width: 10px;
+    height: 70px;
+    border-radius: 100%;
+    background-color: rgb(18, 190, 61);
+    position: absolute;
+  
+    display: block;
+  }
+  
+  .pe1 {
+    top: 20px;
+    left: 200px;
+  }
+  
+  .pe2 {
+    top: 70px;
+    left: 190px;
+    transform: rotate(270deg);
+  }
+  
+  .pe3 {
+    top: 180px;
+    left: 90px;
+    transform: rotate(90deg);
+  }
+  
+  .pe4 {
+    top: 50px;
+    left: 80px;
+    transform: rotate(110deg);
+  }
+  
+  .pe5 {
+    top: 130px;
+    left: 110px;
+    transform: rotate(200deg);
+  }
+  
+  .pe6 {
+    top: 200px;
+    left: 180px;
+    transform: rotate(70deg);
+  }
+  
+  .pe7 {
+    top: 140px;
+    left: 230px;
+  }
+  
+  .pe8 {
+    top: 150px;
+    left: 10px;
+  }
+  
+  .pe9 {
+    top: 0px;
+    left: 100px;
+    transform: rotate(70deg);
+  }
+  
+  .pe10 {
+    top: 100px;
+    left: 30px;
+    transform: rotate(170deg);
+  }
+  .pe11 {
+    top: 220px;
+    left: 130px;
+    transform: rotate(220deg);
+  }
+  
+  /*INTERFACE ***************************************************************/
+  #toggleui {
+    width: 260px;
+    height: auto;
+    display: inline-flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  
+  .card-container {
+    perspective: 100;
+  }
+  
+  .card {
+    width: 100%;
+    height: 60px;
+    display: block;
+    margin: 10px;
+    position: relative;
+    box-shadow: 0px 7px 15px 0px rgba(84, 84, 84, 0.78);
+  
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    transform-style: preserve-3d;
+    transition: 1s ease;
+  }
+  
+  .card h1 {
+    font-size: 1.6em;
+  }
+  
+  .front,
+  .back {
+    background-color: rgb(84, 114, 84);
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+  }
+  
+  .back {
+    transform: rotateY(180deg);
+    background-color: rgb(165, 42, 42);
+    opacity: 0.6;
+  }
+  
+  .flip {
+    transform: rotateY(180deg);
+  }
+  

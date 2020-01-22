@@ -3,27 +3,33 @@ import PropTypes from "prop-types";
 
 import "./PizzaIngredient.scss";
 
+import Pepperoni from "./Pepperoni/Pepperoni";
+import Sausage from "./Sausage/Sausage";
+import Olive from "./Olive/Olive";
+import Pepper from "./Pepper/Pepper";
+import Mushroom from "./Mushroom/Mushroom";
+
 class PizzaIngredient extends Component {
   render() {
     let ingredient = null;
-    console.log(this.props)
+    console.log(this.props);
 
     // Get specific ingredient layout for every single ingredient
     switch (this.props.type) {
       case "pepperoni":
-        ingredient = <div className="pepperoni"></div>;
+        ingredient = <Pepperoni />;
         break;
       case "sausage":
-        ingredient = <div className="sausage"></div>;
+        ingredient = <Sausage />;
         break;
       case "mushroom":
-        ingredient = <div className="mushroom"></div>;
+        ingredient = <Mushroom />;
         break;
       case "olive":
-        ingredient = <div className="olive"></div>;
+        ingredient = <Olive />;
         break;
       case "pepper":
-        ingredient = <div className="pepper"></div>;
+        ingredient = <Pepper />;
         break;
       default:
         ingredient = null;
