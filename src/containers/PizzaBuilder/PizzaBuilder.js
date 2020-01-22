@@ -14,32 +14,9 @@ class PizzaBuilder extends Component {
     purchasing: false
   };
 
-  componentDidMount() {
-    // this.props.onInitIngredients();
-  }
-
-  updatePurchaseState(ingredients) {
-    let sum = 0;
-    if (ingredients) {
-      sum = Object.keys(ingredients)
-        .map(igKey => {
-          return ingredients[igKey];
-        })
-        .reduce((sum, el) => {
-          return sum + el;
-        }, 0);
-    }
-
-    return sum > 0;
-  }
-
   purchaseHandler = () => {
-    if (this.props.isAuthenticated) {
-      this.setState({ purchasing: true });
-    } else {
-      this.props.onSetAuthRedirectPath("/checkout");
-      this.props.history.push("/auth");
-    }
+    console.log('Let s order this delicious pizza!')
+    this.setState({purchasing: true})
   };
 
   purchaseCancelHandler = () => {
@@ -60,12 +37,12 @@ class PizzaBuilder extends Component {
   };
 
   render() {
-    // add count logic so that decide which button to be active
-
+    const { curIngredients } = this.props;
     let addedIngs = [];
 
-    for (const key in this.props.curIngredients) {
-      if (this.props.curIngredients[key]) {
+    // Construct an array of added ingredients
+    for (const key in curIngredients) {
+      if (curIngredients[key]) {
         addedIngs.push(key);
       }
     }
@@ -75,9 +52,11 @@ class PizzaBuilder extends Component {
         <Pizza ingredients={addedIngs} />
         <BuildControls
           ingredientAdded={this.addIngredientHandler}
-          ingredientRemoved={this.removeIngredientHandler}
-          // add a disable or enable prop
-          price={this.props.price}
+          ingredientRemoved={this.removeIngredientHandler}          
+          price={this.props.totalPrice}
+          purchasable={addedIngs.length > 0}
+          curIngredients={curIngredients}
+          ordered={this.purchaseHandler}
         />
       </Aux>
     );
@@ -85,7 +64,10 @@ class PizzaBuilder extends Component {
 }
 
 const mapStateToProps = state => {
-  return { curIngredients: state.pizzaBuilder.currentIngredients };
+  return {
+    curIngredients: state.pizzaBuilder.currentIngredients,
+    totalPrice: state.pizzaBuilder.totalPrice
+  };
 };
 
 const mapDispatchToProps = dispatch => {

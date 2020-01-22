@@ -14,7 +14,9 @@ const pizza = props => {
   // Check if any ingredient added
   if (transformedIngredients.length === 0) {
     transformedIngredients = (
-      <p>Let's add some ingredients to make a delicious Pizza!</p>
+      <p className="add-ing-message">
+        Let's add some ingredients to make a delicious Pizza!
+      </p>
     );
   }
 
