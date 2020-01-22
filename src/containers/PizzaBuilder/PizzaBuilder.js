@@ -6,6 +6,8 @@ import { bindActionCreators } from "redux";
 import Aux from "../../hoc/Aux/Aux";
 import Pizza from "../../components/Pizza/Pizza";
 import BuildControls from "../../components/Pizza/BuildControls/BuildControls";
+import Modal from "../../components/UI/Modal/Modal";
+import OrderSummary from "../../components/Pizza/OrderSummary/OrderSummary";
 
 import * as actions from "../../store/actions/";
 
@@ -15,8 +17,8 @@ class PizzaBuilder extends Component {
   };
 
   purchaseHandler = () => {
-    console.log('Let s order this delicious pizza!')
-    this.setState({purchasing: true})
+    console.log("Let s order this delicious pizza!");
+    this.setState({ purchasing: true });
   };
 
   purchaseCancelHandler = () => {
@@ -37,7 +39,7 @@ class PizzaBuilder extends Component {
   };
 
   render() {
-    const { curIngredients } = this.props;
+    const { curIngredients, totalPrice } = this.props;
     let addedIngs = [];
 
     // Construct an array of added ingredients
@@ -49,11 +51,22 @@ class PizzaBuilder extends Component {
 
     return (
       <Aux>
+        <Modal
+          show={this.state.purchasing}
+          modalClosed={this.purchaseCancelHandler}
+        >
+          <OrderSummary
+            ingredients={addedIngs}
+            price={totalPrice}
+            purchaseCancelled={this.purchaseCancelHandler}
+            purchaseContinued={this.purchaseContinueHandler}
+          />
+        </Modal>
         <Pizza ingredients={addedIngs} />
         <BuildControls
           ingredientAdded={this.addIngredientHandler}
-          ingredientRemoved={this.removeIngredientHandler}          
-          price={this.props.totalPrice}
+          ingredientRemoved={this.removeIngredientHandler}
+          price={totalPrice}
           purchasable={addedIngs.length > 0}
           curIngredients={curIngredients}
           ordered={this.purchaseHandler}
