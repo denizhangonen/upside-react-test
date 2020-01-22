@@ -1,1 +1,1 @@
-export {addIngredient} from "./pizzaBuilder"
+export {addIngredient, removeIngredient} from "./pizzaBuilder"

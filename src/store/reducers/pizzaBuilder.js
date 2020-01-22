@@ -12,14 +12,20 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.ADD_INGREDIENT:
-      console.log(state);
-      console.log(action);
+    case actionTypes.ADD_INGREDIENT:      
       return {
         ...state,
         currentIngredients: {
           ...state.currentIngredients,
           [action.payload]: true
+        }
+      };
+    case actionTypes.REMOVE_INGREDIENT:
+      return {
+        ...state,
+        currentIngredients: {
+          ...state.currentIngredients,
+          [action.payload]: false
         }
       };
     default:

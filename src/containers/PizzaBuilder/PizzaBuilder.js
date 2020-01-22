@@ -51,11 +51,13 @@ class PizzaBuilder extends Component {
     this.props.history.push("/checkout");
   };
 
-  addIngredientHandler = (ingredient) => {    
+  addIngredientHandler = ingredient => {
     this.props.onAddIngredient(ingredient);
   };
 
-  removeIngredientHandler = () => {};
+  removeIngredientHandler = ingredient => {
+    this.props.onRemoveIngredient(ingredient);
+  };
 
   render() {
     const sampleIngs = ["pepperoni", "sausage", "mushroom", "pepper", "olive"];
@@ -80,7 +82,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
-    { onAddIngredient: actions.addIngredient },
+    {
+      onAddIngredient: actions.addIngredient,
+      onRemoveIngredient: actions.removeIngredient
+    },
     dispatch
   );
 };
