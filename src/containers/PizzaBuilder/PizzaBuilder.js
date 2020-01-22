@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import { Redirect } from "react-router-dom";
-
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
@@ -15,13 +13,12 @@ import Spinner from "../../components/UI/Spinner/Spinner";
 
 import * as actions from "../../store/actions/";
 
-class PizzaBuilder extends Component {
+export class PizzaBuilder extends Component {
   state = {
     purchasing: false
   };
 
   purchaseHandler = () => {
-    console.log("Let s order this delicious pizza!");
     this.setState({ purchasing: true });
   };
 
