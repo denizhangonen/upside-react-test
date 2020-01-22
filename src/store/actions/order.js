@@ -4,7 +4,6 @@ import axios from "../../config/axios-orders";
 import * as endPoints from "../../config/endPoints";
 
 export const purchasePizza = data => {
-  console.log(data)
   return dispatch => {
     dispatch(purchasePizzaStart());
     axios
@@ -79,3 +78,9 @@ const fetchOrdersFail = error => {
     payload: error
   };
 };
+
+export const resetOrder = () => {
+  return {
+    type: actionTypes.RESET_ORDER
+  }
+}

@@ -39,6 +39,10 @@ const reducer = (state = initialState, action) => {
         },        
         totalPrice: state.totalPrice - INGREDIENT_PRICES[action.payload]
       };
+    case actionTypes.RESET_ORDER:
+      return {
+        ...initialState
+      }
     default:
       return state;
   }

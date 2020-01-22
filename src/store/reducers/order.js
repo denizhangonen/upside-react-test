@@ -35,7 +35,6 @@ const reducer = (state = initialState, action) => {
         error: null
       };
     case actionTypes.FETCH_ORDERS_SUCCESS:
-      console.log(action.payload)
       return {
         ...state,
         loading: false,
@@ -47,6 +46,10 @@ const reducer = (state = initialState, action) => {
         ...state,
         loading: true,
         error: action.payload
+      };
+    case actionTypes.RESET_ORDER:
+      return {
+        ...initialState
       };
     default:
       return state;

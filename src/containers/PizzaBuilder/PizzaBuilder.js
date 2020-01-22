@@ -46,12 +46,18 @@ class PizzaBuilder extends Component {
   };
 
   gotoMainPageHandler = () => {
-  // Not an elegant solution
-    window.location.reload();
+    // not the most elegant solution...
+    this.resetProcess();
   };
 
-  gotoOrdersHandler = () => {    
+  gotoOrdersHandler = () => {
+    this.resetProcess();
     this.props.history.push("/orders");
+  };
+
+  resetProcess = () => {
+    this.setState({ purchasing: false });
+    this.props.onResetOrder();
   };
 
   render() {
@@ -125,7 +131,8 @@ const mapDispatchToProps = dispatch => {
     {
       onAddIngredient: actions.addIngredient,
       onRemoveIngredient: actions.removeIngredient,
-      onInitPurchase: actions.purchasePizza
+      onInitPurchase: actions.purchasePizza,
+      onResetOrder: actions.resetOrder
     },
     dispatch
   );
