@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Pepper.scss";
+
 const sausage = () => (
   <div id="pepper-holder">
     <div className="pepper pe1"></div>

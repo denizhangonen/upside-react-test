@@ -1,0 +1,72 @@
+#sausage-holder {
+    width: 310px;
+    height: 310px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.sausage {
+    width: 30px;
+    height: 30px;
+    border-radius: 40% 75% 75% 100%;
+    background-color: rgb(147, 73, 6);
+    position: absolute;
+
+    display: block;
+}
+
+.s1 {
+    top: 150px;
+    left: 200px;
+}
+
+.s2 {
+    top: 70px;
+    left: 130px;
+    transform: rotate(270deg);
+}
+
+.s3 {
+    top: 100px;
+    left: 40px;
+    transform: rotate(90deg);
+}
+
+.s4 {
+    top: 200px;
+    left: 50px;
+    transform: rotate(110deg);
+}
+
+.s5 {
+    top: 240px;
+    left: 120px;
+    transform: rotate(200deg);
+}
+
+.s6 {
+    top: 190px;
+    left: 250px;
+    transform: rotate(70deg);
+}
+
+.s7 {
+    top: 40px;
+    left: 230px;
+}
+
+.s8 {
+    top: 90px;
+    left: 10px;
+}
+
+.s9 {
+    top: 20px;
+    left: 70px;
+}
+
+.s10 {
+    top: 130px;
+    left: 90px;
+}

@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Sausage.scss";
+
 const sausage = () => (
   <div id="sausage-holder">
     <div className="sausage s1"></div>

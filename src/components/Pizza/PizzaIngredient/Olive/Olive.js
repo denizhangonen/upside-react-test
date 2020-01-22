@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Olive.scss";
+
 const olive = () => (
   <div id="olive-holder">
     <div className="olive o1"></div>

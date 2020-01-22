@@ -1,0 +1,72 @@
+#mushroom-holder {
+    width: 310px;
+    height: 310px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.mushroom {
+    width: 35px;
+    height: 20px;
+    border-radius: 100% 100% 0% 0%;
+    background-color: rgb(189, 129, 28);
+    position: absolute;
+
+    display: block;
+}
+
+.m1 {
+    top: 20px;
+    left: 220px;
+}
+
+.m2 {
+    top: 70px;
+    left: 190px;
+    transform: rotate(270deg);
+}
+
+.m3 {
+    top: 260px;
+    left: 60px;
+    transform: rotate(90deg);
+}
+
+.m4 {
+    top: 50px;
+    left: 100px;
+    transform: rotate(110deg);
+}
+
+.m5 {
+    top: 140px;
+    left: 160px;
+    transform: rotate(200deg);
+}
+
+.m6 {
+    top: 260px;
+    left: 180px;
+    transform: rotate(70deg);
+}
+
+.m7 {
+    top: 140px;
+    left: 260px;
+}
+
+.m8 {
+    top: 150px;
+    left: 30px;
+}
+
+.m9 {
+    top: 40px;
+    left: 30px;
+}
+
+.m10 {
+    top: 200px;
+    left: 100px;
+}

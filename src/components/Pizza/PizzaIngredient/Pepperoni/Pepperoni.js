@@ -1,11 +1,7 @@
 import React from "react";
 
+import "./Pepperoni.scss";
 const pepperoni = () => {
-//   let pepporoniTopping = null;
-//   for (let i = 1; i <= 7; i++) {
-//     pepporoniTopping += <div className="pepperoni p1"></div>;
-//   }
-
   return (
     <div id="pepperoni-holder">
       <div className="pepperoni p1"></div>

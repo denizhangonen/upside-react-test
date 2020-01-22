@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Mushroom.scss";
+
 const mushroom = () => (
   <div id="mushroom-holder">
     <div className="mushroom m1"></div>
