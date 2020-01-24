@@ -4,7 +4,7 @@ import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 
 import OrderSummary from "./OrderSummary";
-import Aux from "../../../hoc/Aux/Aux";
+import Aux from "../../../hoc/Auxlry/Auxlry";
 import Button from "../../UI/Button/Button";
 
 configure({ adapter: new Adapter() });

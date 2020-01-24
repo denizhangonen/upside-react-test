@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import Aux from "../../hoc/Aux/Aux";
+import Aux from "../../hoc/Auxlry/Auxlry";
 import Pizza from "../../components/Pizza/Pizza";
 import BuildControls from "../../components/Pizza/BuildControls/BuildControls";
 import Modal from "../../components/UI/Modal/Modal";
